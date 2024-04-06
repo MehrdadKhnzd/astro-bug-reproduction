@@ -5,7 +5,7 @@ export default () => {
 
   const inc = () => setNum((v) => v + 1);
 
-  onMount(() => setNum(20));
+  // onMount(() => setNum(20));
 
   return <button onClick={inc}>{num()}</button>;
 };
