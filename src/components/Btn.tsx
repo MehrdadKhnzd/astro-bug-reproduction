@@ -1,11 +1,13 @@
-import { createSignal, onMount } from 'solid-js';
+import { type Component, createSignal, onMount } from 'solid-js';
 
-export default () => {
-  const [num, setNum] = createSignal(0);
+const Btn: Component<{ initialNum: number; }> = (props) => {
+  const [num, setNum] = createSignal(props.initialNum);
 
-  // const inc = () => setNum((v) => v + 1);
+  const inc = () => setNum((v) => v + 1);
 
   // onMount(() => setNum(20));
 
-  return <button onClick={[setNum, 10]}>{num()}</button>;
+  return <button onClick={inc}>{num()}</button>;
 };
+
+export default Btn;
